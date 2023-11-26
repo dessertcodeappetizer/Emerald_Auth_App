@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Login Form Design | CodeLab</title>
+      <link rel="stylesheet" href="../static/everify2.css">
+   </head>
+   <style>
+        body {
+        background-image: url(../static/img6.jpg);
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-position: center center;
+        }
+    </style>
+   <body>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+        <h1 style="font-size:60px; color:#000000;">BELIEVE</h1>
+        <div class="wrapper">
+            <div class="title">
+                Enter OTP
+        </div>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="font-size: 10px;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="#" method="post">
+            {% comment %} <div class="field">
+                {% csrf_token %}
+                <input type="text" name="email" value="{{email}}" readonly required>
+                <label>Email Address</label>
+            </div> {% endcomment %}
+            <div class="field">
+                {% csrf_token %}
+                <input type="password" name="otp" required>
+                <label>OTP</label>
+            {% comment %} </div>
+            <div class="content">
+                <div class="checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <div class="pass-link">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div> {% endcomment %}
+            <div class="field">
+                <input type="submit" value="SignUp>">
+            </div>
+            {% comment %} <div class="signup-link">
+                Not a member? <a href="#">Signup now</a>
+            </div> {% endcomment %}
+            <div class="signup-link">
+                <a href="https://127.0.0.1:8000/home/"><h1 style="font-size:16px; color:#000000;">Home</h1></a>
+            </div>
+        </form>
+      </div>
+   </body>
+</html>

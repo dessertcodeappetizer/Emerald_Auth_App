@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Emerald</title>
+    <link rel="stylesheet" href="../static/styleSU.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <style>
+    body {
+       background-image: url(../static/img9.jpg);
+       background-repeat:no-repeat;
+       background-size: cover;
+       background-position: center center;
+    }
+ </style>
+<body>
+  <div class="container">
+    <div class="title">BELIEVE</div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="content">
+      <form action="#" method="post">
+        {% csrf_token %}
+        {% load static %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" placeholder="Enter first name" name="first_name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" placeholder="Enter last name" name="last_name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="{{email}}" name="email" value="{{email}}" readonly required>
+          </div>
+          <input type="hidden" name="email" value="{{email}}">
+          <div class="input-box">
+            <span class="details">UserName</span>
+            <input type="text" placeholder="Enter Username" name="username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter Phone" name="phone" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" name="password1" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" name="password2" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1" value="male">
+          <input type="radio" name="gender" id="dot-2" value="female">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender"><h1 style="font-size:16px; color:#FFFFFF;">Male</h1></span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender"><h1 style="font-size:16px; color:#FFFFFF;">Female</h1></span>
+          </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+      <div style="text-align:center;">
+        <a href="http://127.0.0.1:8000/home/"><h1 style="font-size:12px; color:#FFFFFF;">Home</h1></a>
+     </div>
+    </div>
+  </div>
+
+</body>
+</html>

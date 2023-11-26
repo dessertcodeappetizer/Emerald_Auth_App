@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Emerald Forgot Password</title>
+      <link rel="stylesheet" href="../static/everify1.css">
+   </head>
+   <style>
+        body {
+        background-image: url(../static/img8.jpg);
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-position: center center;
+        }
+    </style>
+   <body>
+        <style>
+            body {
+            text-align: center;
+            }
+        </style>
+        <h1 style="font-size:60px; color:#000000;">BELIEVE</h1>
+        <div class="wrapper">
+            <div class="title">
+                !DonT WorrY!
+        </div>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="#" method='post'>
+        <div class="field">
+            {% csrf_token %}
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+        </div>
+            <div class="field">
+               <input type="submit" value="Send OTP">
+            </div>
+            <div>
+                <a href="http://127.0.0.1:8000/home/"><h1 style="font-size:16px; color:#000000;">Home</h1></a>
+             </div>
+         </form>
+      </div>
+   </body>
+</html>

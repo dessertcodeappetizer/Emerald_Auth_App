@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Emerald</title>
+      <link rel="stylesheet" href="../static/login.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <style>
+      body {
+         background-image: url(../static/img13.jpg);
+         background-repeat:no-repeat;
+         background-size: cover;
+         background-position: center center;
+      }
+   </style>
+   <body>
+      <h1 style="font-size:60px; color:#FFFFFF;">BELIEVE</h1>
+      <div class="content">
+         <div class="text" style="color:#FFFFFF">
+            Login
+         </div>
+         {% if messages %}
+         <ul class="messages">
+            {% for message in messages %}
+               <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color:#FFFFFF">{{ message }}</li>
+            {% endfor %}
+         </ul>
+         {% endif %}
+         <form action="#" method='post'>
+            <div class="field">
+               {% csrf_token %}
+               <input type="email" name="email" required>
+               {% comment %} <span class="fas fa-user"></span> {% endcomment %}
+               <label>Email</label>
+            </div>
+            <div class="field">
+               {% csrf_token %}
+               <input type="password" name="password" required>
+               {% comment %} <span class="fas fa-lock"></span> {% endcomment %}
+               <label>Password</label>
+            </div>
+            <div>
+               <a href="http://127.0.0.1:8000/fp1/"><h1 style="font-size:16px; color:#FFFFFF;">Forget Password?</h1></a>
+            </div>
+            <button type="submit">Sign in</button>
+            <div class="sign-up">
+               <h1 style="font-size:16px; color:#FFFFFF;">Not a Member?</h1>
+               <a href="http://127.0.0.1:8000/everify1/"><h1 style="font-size:16px; color:#FFFFFF;">SignUp</h1></a>
+            </div>
+         </form>
+         <div>
+            <a href="http://127.0.0.1:8000/home/"><h1 style="font-size:16px; color:#FFFFFF;">Home</h1></a>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Emerald Verification</title>
+      <link rel="stylesheet" href="../static/everify2.css">
+   </head>
+   <style>
+        body {
+        background-image: url(../static/img11.jpg);
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-position: center center;
+        }
+    </style>
+   <body>
+        <style>
+            body {
+                text-align: center;
+            }
+        </style>
+        <h1 style="font-size:60px; color:#000000;">BELIEVE</h1>
+        <div class="wrapper">
+            <div class="title">
+                Enter OTP
+        </div>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="font-size: 10px;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="#" method="post">
+            <div class="field">
+                {% csrf_token %}
+                <input type="password" name="otp1" required>
+                <label>OTP</label>
+            <div class="field">
+                <input type="submit" value="Confirm">
+            </div>
+            <div class="signup-link">
+                <a href="http://127.0.0.1:8000/home/"><h1 style="font-size:16px; color:#000000;">Home</h1></a>
+            </div>
+        </form>
+      </div>
+   </body>
+</html>

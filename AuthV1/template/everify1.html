@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Emerald Verification</title>
+      <link rel="stylesheet" href="../static/everify1.css">
+   </head>
+   <style>
+        body {
+        background-image: url(../static/img.jpg);
+        background-repeat:no-repeat;
+        background-size: cover;
+        background-position: center center;
+        }
+    </style>
+   <body>
+        <style>
+            body {
+            text-align: center;
+            }
+        </style>
+        <h1 style="font-size:60px; color:#000000;">BELIEVE</h1>
+        <div class="wrapper">
+            <div class="title">
+                VerificatioN
+        </div>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <form action="#" method='post'>
+        <div class="field">
+            {% csrf_token %}
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+        </div>
+            {% comment %} <div class="field">
+               <input type="password" required>
+               <label>Password</label>
+            </div> {% endcomment %}
+            {% comment %} <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Remember me</label>
+               </div>
+               <div class="pass-link">
+                  <a href="#">Forgot password?</a>
+               </div>
+            </div> {% endcomment %}
+            <div class="field">
+               <input type="submit" value="Send OTP">
+               {% comment %} <button type="submit">Send OTP</button> {% endcomment %}
+            </div>
+            {% comment %} <div class="signup-link">
+               Not a member? <a href="#">Signup now</a>
+            </div> {% endcomment %}
+            <div>
+                <a href="http://127.0.0.1:8000/home/"><h1 style="font-size:16px; color:#000000;">Home</h1></a>
+             </div>
+         </form>
+      </div>
+   </body>
+</html>
